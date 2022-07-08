@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    
+
     public void paleta01puntaje()
     {
         puntaje01++;

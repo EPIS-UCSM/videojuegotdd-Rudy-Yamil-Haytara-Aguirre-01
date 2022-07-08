@@ -1,13 +1,13 @@
 using UnityEngine;
 
-
+[RequireComponent(typeof(Rigidbody2D))]
 public class Pelota : MonoBehaviour
 {
 
     [SerializeField] private float velocidadInicial = 4f;
     [SerializeField] private float MultiplicadordeVelocidad = 1.1f;
 
-    private Rigidbody2D  pelotaRB;
+    private Rigidbody2D pelotaRB;
 
 
     // Start is called before the first frame update
