@@ -8,14 +8,14 @@ public class PelotaMoves : MonoBehaviour
 {
     
     private GameObject objetoPelota;
-    //private Transform pelota;
+    private Rigidbody2D pelotaRB;
     
     [SetUp]
     public void Setup()
     {
-        //objetoPelota = GameObject.Find("Pelota");
+        
         objetoPelota = GameObject.Instantiate(new GameObject());
-        //pelota = objetoPelota.AddComponent<Pelota>();
+        pelotaRB = objetoPelota.AddComponent<Rigidbody2D>();
 
     }
     
@@ -23,16 +23,12 @@ public class PelotaMoves : MonoBehaviour
     public IEnumerator PelotaMovesWithEnumeratorPasses()
     {
         yield return null;
-
-        //var objetoPelota = GameObject.FindGameObjectWithTag("pelota");
-        //var asdf = GameObject.Instantiate(objetoPelota);
-
     
-        Vector2 posicionInicial = objetoPelota.transform.position;
+        Vector2 posicionInicial = pelotaRB.transform.position;
 
         yield return new WaitForSeconds(0.1f);
         
-        Vector2 nuevaPosicion =  objetoPelota.transform.position;
+        Vector2 nuevaPosicion =  pelotaRB.transform.position;
 
         Assert.AreNotEqual(nuevaPosicion, posicionInicial);       
 
